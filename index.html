@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" data-astryx-theme="butter" data-theme="dark">
+<html lang="ko" data-astryx-theme="butter" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -215,7 +215,25 @@ footer{padding:48px 0 64px;border-top:1px solid var(--line-3)}
   .shead{flex-direction:column;align-items:flex-start}
   .hero h1{font-size:28px;line-height:38px;letter-spacing:-.0236em}
 }
-.brand-banner{display:block;margin:0 0 24px;border-radius:var(--r-16,16px);overflow:hidden}.brand-banner img{width:100%;display:block}
+
+/* ===== 부드러운 종이 테마 (2026-11-14 사용자 "알아서홍보 이미지 넣어서 부드러운 느낌으로") ===== */
+html[data-astryx-theme][data-theme="light"]{
+  --color-background-body:#F7F2E8; --color-background-muted:#EFE7D8; --color-background-surface:#FBF7EF; --color-background-card:#FFFDF8;
+  --color-text-primary:#2E2620; --color-text-secondary:#6B5E54; --color-text-disabled:#B5A99B;
+  --color-border:#E8DECD; --color-border-emphasized:#D9CBB4;
+  --color-accent:#2C3A5A; --color-accent-muted:#DDEFE7; --color-text-accent:#2F7D66;
+}
+html[data-theme="light"] .hero::before{display:none}
+html[data-theme="light"] .box{box-shadow:0 1px 0 rgba(46,38,32,.04),0 8px 24px -12px rgba(46,38,32,.18)}
+html[data-theme="light"] .logo-en{color:#2F7D66}
+.hero-art{position:absolute;right:24px;top:64px;width:300px;height:300px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 8px #FFFDF8,0 0 0 11px #4FB393,0 18px 40px -18px rgba(46,38,32,.35)}
+.hero > :not(.hero-art){position:relative}
+.hero h1,.hero .lead{max-width:min(760px,calc(100% - 340px))!important}
+.banner-wrap{padding-bottom:56px}
+.brand-banner{display:block;border-radius:24px;overflow:hidden;box-shadow:0 18px 40px -22px rgba(46,38,32,.4);transition:transform .2s}
+.brand-banner:hover{transform:translateY(-2px)}
+.brand-banner img{width:100%;display:block}
+@media (max-width:767px){.hero-art{position:static;display:block;width:150px;height:150px;margin:0 0 20px;box-shadow:0 0 0 5px #FFFDF8,0 0 0 7px #4FB393}.hero h1,.hero .lead{max-width:none!important}.banner-wrap{padding-bottom:40px}}
 </style>
 </head>
 <body>
@@ -227,6 +245,7 @@ footer{padding:48px 0 64px;border-top:1px solid var(--line-3)}
 
 <main id="top">
   <div class="container hero">
+    <img class="hero-art" src="brand/jochajang-hello.jpg" alt="엄지척하는 조차장 캐릭터" width="320" height="320">
     <span class="badge badge-m badge-brand" id="heroEyebrow"></span>
     <h1 class="t-display2 c-strong" id="heroTitle" style="margin:20px 0 0;max-width:760px"></h1>
     <p class="lead t-headline1 w-r c-2" id="heroLead"></p>
@@ -236,6 +255,7 @@ footer{padding:48px 0 64px;border-top:1px solid var(--line-3)}
     </div>
     <div class="facts" id="facts"></div>
   </div>
+  <div class="container banner-wrap"><a class="brand-banner" href="https://litt.ly/ai_workdiet" target="_blank" rel="noopener"><img src="brand/alaseo-hongbo-banner.jpg" alt="알아서홍보 by 조차장 · 블로그·스레드 홍보, 매일 알아서 올라가게 · 무료 상담 신청"></a></div>
 
   <section id="writing"><div class="container">
     <div class="shead shead-l"><h2>글</h2><p class="t-body1 c-2">현장에서 직접 해 본 것만 씁니다. 코딩을 몰라도 따라 할 수 있게.</p></div>
@@ -249,7 +269,6 @@ footer{padding:48px 0 64px;border-top:1px solid var(--line-3)}
 
   <section id="cases"><div class="container">
     <div class="shead shead-l"><h2>알아서홍보 · 찾아가는 AI 홍보 자동화 세팅</h2><p class="t-body1 c-2">직접 찾아가 블로그와 스레드 홍보가 알아서 굴러가도록 세팅해 드립니다.</p></div>
-    <a class="brand-banner" href="https://litt.ly/ai_workdiet" target="_blank" rel="noopener"><img src="brand/alaseo-hongbo-banner.jpg" alt="알아서홍보 by 조차장 · 블로그·스레드 홍보, 매일 알아서 올라가게 · 무료 상담 신청" loading="lazy"></a>
     <div class="grid" id="caseList"></div>
     <p class="case-note t-caption1 c-3">사례는 본인 동의를 받아 게시합니다. 사진을 누르면 세팅한 화면을 크게 볼 수 있어요.</p>
   </div></section>
@@ -358,8 +377,8 @@ $('channelList').innerHTML = vis(DATA.channels).map(c =>
 $('footer').textContent = `© 조현규 · 마지막 업데이트 ${DATA.updated} · 디자인: Meta Astryx butter 테마 (MIT), 글꼴: Outfit·Sarina·Pretendard (OFL)`;
 
 const root = document.documentElement, btn = $('themeBtn');
-const setTheme = t => { root.dataset.theme = t; btn.textContent = t === 'dark' ? '밝게' : '어둡게'; try{ localStorage.setItem('pf-theme', t); }catch(e){} };
-setTheme((()=>{ try{ return localStorage.getItem('pf-theme') || 'dark'; }catch(e){ return 'dark'; } })());
+const setTheme = t => { root.dataset.theme = t; btn.textContent = t === 'dark' ? '밝게' : '어둡게'; try{ localStorage.setItem('pf-theme2', t); }catch(e){} };
+setTheme((()=>{ try{ return localStorage.getItem('pf-theme2') || 'light'; }catch(e){ return 'light'; } })());
 btn.onclick = () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
 </script>
 </body>
