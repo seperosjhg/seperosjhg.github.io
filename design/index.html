@@ -180,6 +180,41 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-
 .how .box{display:flex;flex-direction:column;gap:6px}
 code{font-family:inherit;color:var(--fg-strong);background:var(--surface-2);padding:2px 8px;border-radius:var(--r-8)}
 @media (max-width:767px){.grid9,.how{grid-template-columns:1fr}}
+
+/* ---------- 블로그 대문 구조 6가지 (2026-11-16) ---------- */
+.bt-sec{margin-top:56px;padding-top:40px;border-top:1px solid var(--line-3)}
+.bt-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.bt-stats .box{display:flex;flex-direction:column;gap:4px}
+.bt-num{font-size:28px;line-height:36px;font-weight:700;color:var(--brand);letter-spacing:-.02em}
+.bt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.bt-card{display:flex;flex-direction:column;gap:10px}
+.bt-card ul{margin:0;padding-left:18px;color:var(--fg-2);font-size:14px;line-height:22px}
+.bt-card li+li{margin-top:2px}
+.bt-k{font-size:12px;line-height:16px;font-weight:600;color:var(--fg-3);margin-top:4px}
+.bt-tip{font-size:13px;line-height:20px;color:var(--fg-2);background:var(--surface-3);border-radius:var(--r-10);padding:8px 10px}
+.bt-frame{aspect-ratio:4/3;border-radius:var(--r-12);background:var(--bg-2);box-shadow:inset 0 0 0 1px var(--line-3);padding:10px;display:flex;flex-direction:column;gap:6px;overflow:hidden}
+[data-theme="light"] .bt-frame{background:#F4F5F7}
+.bt-frame .gnb{height:6px;border-radius:3px;background:var(--surface-2)}
+.bt-frame .hero{border-radius:8px;background:linear-gradient(135deg,rgba(51,133,255,.65),rgba(125,94,247,.5));position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:5px;padding:10px}
+.bt-frame .tt{height:9px;width:46%;border-radius:4px;background:rgba(255,255,255,.92)}
+.bt-frame .st{height:5px;width:30%;border-radius:3px;background:rgba(255,255,255,.6)}
+.bt-frame .menu{display:flex;gap:4px}
+.bt-frame .menu i{display:block;height:5px;width:22px;border-radius:3px;background:var(--fg-4)}
+.bt-frame .menu i:first-child{background:var(--brand)}
+.bt-frame .ph{border-radius:5px;background:rgba(112,115,124,.38);min-height:0}
+.bt-frame .ln{height:4px;border-radius:2px;background:var(--fg-4)}
+.bt-frame .ln.s{width:60%}.bt-frame .ln.b{height:6px;background:var(--fg-3);width:70%}
+.bt-frame .ic{width:16px;height:16px;border-radius:50%;background:var(--brand);opacity:.9;flex:0 0 auto}
+.bt-frame .ic.w{background:rgba(255,255,255,.9)}
+.bt-frame .row{display:flex;gap:6px;margin:0;align-items:stretch;justify-content:flex-start}
+.bt-frame .col{display:flex;flex-direction:column;gap:4px;min-width:0}
+.bt-frame .wd{border-radius:5px;box-shadow:inset 0 0 0 1px var(--line-2);padding:5px;display:flex;flex-direction:column;gap:3px;justify-content:center}
+.bt-pick{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:16px}
+.bt-pick .box{display:flex;flex-direction:column;gap:6px}
+@media (max-width:991px){.bt-grid{grid-template-columns:repeat(2,1fr)}.bt-pick{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:767px){.bt-grid,.bt-pick{grid-template-columns:1fr}.bt-stats{grid-template-columns:repeat(2,1fr)}}
+.bt-card .row .badge{white-space:nowrap;flex:0 0 auto}
+.bt-card .row .t-heading2{font-size:18px;line-height:26px}
 </style></head><body><main class="container wrap">
 <span class="badge badge-m badge-brand">디자인 명령어</span>
 <h1 class="t-title1 c-strong" style="margin:12px 0 4px">단어 하나로 디자인 고르기</h1>
@@ -209,4 +244,75 @@ code{font-family:inherit;color:var(--fg-strong);background:var(--surface-2);padd
 <div class="row"><span class="t-title3 c-strong">Y2K</span><span class="badge badge-s badge-neutral">Astryx y2k</span></div>
 <div class="t-label1 c-2">핑크·라임·보라 레트로</div><div class="t-label2 c-3">느림보와 뽀시래기, 아이들 이벤트</div></div></div>
 <div class="smsg info" style="margin-top:24px"><div><b>덧붙이는 말</b> · <code>밝게</code> / <code>어둡게</code>로 화면 밝기를 바꿔요(기본은 어둡게, 정부24는 기본 밝게). 메타·말차·버터·초코·스톤·고딕·Y2K는 인터넷이 있어야 열려서, 폐쇄망에서 볼 파일은 원티드로 만들어요.</div></div>
+
+<section class="bt-sec" id="blog-top">
+<span class="badge badge-m badge-brand">블로그 대문 구조</span>
+<h2 class="t-title2 c-strong" style="margin:12px 0 4px">잘 나가는 블로그 대문, 6가지 구조</h2>
+<p class="t-body1 c-2" style="margin:0">네이버 블로그 종합 상위 20곳(여행·육아·건강·어학·IT·반려동물)의 첫 화면을 직접 열어 보고 비슷한 모양끼리 묶었어요. 고객에게 보여 주면서 <b>"어떤 모양이 마음에 드세요?"</b>라고 고르게 하면 돼요.</p>
+<div class="bt-stats">
+<div class="box"><span class="bt-num">17<span class="t-headline1 c-3"> / 20</span></span><span class="t-label1 c-2">첫 화면을 <b>프롤로그</b>로 둠 (글 목록이 아니라 대문부터 보여 줌)</span></div>
+<div class="box"><span class="bt-num">16<span class="t-headline1 c-3"> / 20</span></span><span class="t-label1 c-2">대문에 <b>직접 만든 사진·그림</b>을 걸어 둠</span></div>
+<div class="box"><span class="bt-num">15<span class="t-headline1 c-3"> / 20</span></span><span class="t-label1 c-2">위 메뉴에 <b>주제 2~4개</b>를 걸어 바로 가게 함</span></div>
+<div class="box"><span class="bt-num">9<span class="t-headline1 c-3"> / 20</span></span><span class="t-label1 c-2">첫 화면에 <b>인증 배지</b>(인플루언서·이달의 블로그 등)를 보여 줌</span></div>
+</div>
+<div class="bt-grid"><div class="box bt-card"><div class="bt-frame" aria-label="큰 사진 한 장형 구조 그림"><div class="gnb"></div><div class="hero" style="flex:0 0 52%"><div class="tt"></div><div class="st"></div></div><div class="menu"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="row" style="flex:1"><div class="col" style="width:22%"><div class="ph" style="aspect-ratio:1"></div><div class="ln s"></div><div class="ln s"></div></div><div class="col" style="flex:1;gap:6px"><div class="ln b"></div><div class="ln "></div><div class="ln "></div><div class="ln "></div><div class="ln "></div></div></div></div>
+<div class="row"><span class="t-heading2 c-strong">1. 큰 사진 한 장형</span><span class="badge badge-s badge-brand">상위 20곳 중 6곳</span></div>
+<div class="t-label1 c-2">대문 = 사진(그림) 한 장 + 블로그 이름. 들어오자마자 분위기가 보여요.</div>
+<div class="bt-k">잘 맞는 고객</div><div class="t-label1">카페·꽃집·펜션처럼 사진이 강한 가게, 얼굴이 곧 브랜드인 강사·작가</div>
+<div class="bt-k">들어가는 것</div><ul><li>가로 966px 큰 사진 위에 이름 한 줄</li><li>그 아래 메뉴 한 줄(주제 2~4개)</li><li>왼쪽 프로필 + 오른쪽 글 목록</li></ul>
+<div class="bt-k">네이버에서 만드는 법</div><div class="t-label2 c-2">꾸미기 설정 > 타이틀 꾸미기 > 직접 등록(가로 966, 세로 최대 600)</div>
+<div class="bt-tip">사진 위 글자는 크게 한 줄만. 휴대폰 첫 화면(커버)은 앱에서 따로 넣어야 해요.</div></div><div class="box bt-card"><div class="bt-frame" aria-label="배경 + 아이콘 버튼형 구조 그림"><div class="hero" style="flex:0 0 66%;justify-content:center;align-items:flex-start;gap:6px;margin:-10px -10px 0;border-radius:0;padding:14px 16px"><div class="tt" style="width:40%;height:11px"></div><div class="st" style="width:32%"></div><div class="row" style="margin-top:10px;gap:8px"><div class="ic w"></div><div class="ic w"></div><div class="ic w"></div><div class="ic w"></div><div class="ic w"></div></div></div>
+<div class="row" style="flex:1;justify-content:center;gap:8px"><div class="wd" style="width:16%"><div class="ph" style="flex:1"></div></div><div class="wd" style="width:16%;background:rgba(30,212,90,.12)"><div class="ln b" style="background:var(--positive);width:80%"></div></div><div class="wd" style="width:30%"><div class="ln "></div><div class="ln "></div><div class="ln "></div></div></div></div>
+<div class="row"><span class="t-heading2 c-strong">2. 배경 + 아이콘 버튼형</span><span class="badge badge-s badge-brand">상위 20곳 중 2곳</span></div>
+<div class="t-label1 c-2">꽉 찬 배경 사진에 한 줄 소개, 그 아래 동그란 버튼 3~5개.</div>
+<div class="bt-k">잘 맞는 고객</div><div class="t-label1">예약·문의가 중요한 매장, 상담소, 학원, 여러 채널(인스타·유튜브)을 함께 하는 곳</div>
+<div class="bt-k">들어가는 것</div><ul><li>넓은 배경 + 이름·한 줄 소개</li><li>버튼: 메뉴 / 예약·문의 / 인스타 / 유튜브 / 지도</li><li>버튼 아래 인증 배지·연락처</li></ul>
+<div class="bt-k">네이버에서 만드는 법</div><div class="t-label2 c-2">타이틀 직접 등록 + 위젯 직접등록(그림 170px + 링크)으로 버튼을 대문 바로 아래 한 줄로</div>
+<div class="bt-tip">조차장 블로그가 이 구조예요(아이콘 10개, 5개씩 2줄). 버튼 첫 칸은 "무료 상담"처럼 가장 원하는 행동.</div></div><div class="box bt-card"><div class="bt-frame" aria-label="소개서(포트폴리오)형 구조 그림"><div class="hero" style="flex:0 0 34%"><div class="tt" style="width:30%"></div><div class="st"></div></div>
+<div class="row" style="flex:0 0 22%"><div class="ph" style="flex:1"></div><div class="ph" style="flex:1"></div><div class="ph" style="flex:1"></div><div class="ph" style="flex:1"></div><div class="ph" style="flex:1"></div></div>
+<div class="row" style="flex:1"><div class="col" style="flex:1"><div class="ln b" style="width:80%;"></div><div class="ln "></div><div class="ln "></div><div class="ln "></div></div><div class="col" style="flex:1"><div class="ln b" style="width:80%;"></div><div class="ln "></div><div class="ln "></div><div class="ln "></div></div><div class="col" style="flex:1"><div class="ln b" style="width:80%;"></div><div class="ln "></div><div class="ln "></div><div class="ln "></div></div><div class="col" style="flex:1"><div class="ln b" style="width:80%;"></div><div class="ln "></div><div class="ln "></div><div class="ln "></div></div><div class="col" style="flex:1"><div class="ln b" style="width:80%;background:var(--brand)"></div><div class="ln "></div><div class="ln "></div><div class="ln "></div></div></div></div>
+<div class="row"><span class="t-heading2 c-strong">3. 소개서(포트폴리오)형</span><span class="badge badge-s badge-brand">상위 20곳 중 1곳</span></div>
+<div class="t-label1 c-2">대문 아래가 한 장짜리 회사 소개서처럼 정리돼 있어요.</div>
+<div class="bt-k">잘 맞는 고객</div><div class="t-label1">강사·전문가·상담사, 복지관·기관, 협업 제안을 받고 싶은 사람</div>
+<div class="bt-k">들어가는 것</div><ul><li>큰 대문 + 주제별 사진 칸 5개</li><li>소개 / 대표 이력 / 활동 내역 / 채널 / 협업 문의 5칸</li><li>마지막 칸에 문의 메일·폼 링크</li></ul>
+<div class="bt-k">네이버에서 만드는 법</div><div class="t-label2 c-2">1단 레이아웃 + 위젯 직접등록으로 사진 칸·글 칸을 만들기</div>
+<div class="bt-tip">숫자(경력, 수상, 순위)는 확인된 것만. 처음 오는 손님이 "누구인지" 10초 안에 알게 하는 게 목표.</div></div><div class="box bt-card"><div class="bt-frame" aria-label="메뉴판 + 그림형 구조 그림"><div class="menu"><i></i><i></i><i></i><i></i><i></i></div><div class="row" style="flex:1"><div class="col" style="width:30%;gap:6px;padding-top:6px"><div class="ln b" style="height:12px;width:85%;background:var(--brand)"></div><div class="ln s"></div><div class="ln s"></div><div class="ln s"></div><div class="ln s"></div><div class="ln s"></div><div class="row" style="margin-top:auto;gap:4px"><div class="ic"></div><div class="ic"></div><div class="ic"></div><div class="ic"></div></div></div>
+<div style="flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:4px"><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div></div></div>
+<div class="row" style="flex:0 0 12%"><div class="ph" style="flex:1"></div><div class="ph" style="flex:1"></div><div class="ph" style="flex:1"></div><div class="ph" style="flex:1"></div><div class="ph" style="flex:1"></div></div></div>
+<div class="row"><span class="t-heading2 c-strong">4. 메뉴판 + 그림형</span><span class="badge badge-s badge-brand">상위 20곳 중 4곳</span></div>
+<div class="t-label1 c-2">왼쪽엔 로고와 주제 목록(메뉴판), 오른쪽엔 캐릭터·사진 모음.</div>
+<div class="bt-k">잘 맞는 고객</div><div class="t-label1">캐릭터·손글씨 로고가 있는 브랜드, 주제가 여러 개인 육아·생활 블로그, 공방</div>
+<div class="bt-k">들어가는 것</div><ul><li>로고(손글씨·캐릭터) + 주제 목록 5~7줄</li><li>오른쪽 대표 그림 1장 또는 사진 6칸 콜라주</li><li>아래 SNS 아이콘 줄 + 검색창</li></ul>
+<div class="bt-k">네이버에서 만드는 법</div><div class="t-label2 c-2">대문 그림 안에 메뉴판을 그려 넣고, 실제 이동은 상단 메뉴·위젯 링크로</div>
+<div class="bt-tip">그림 안 글자는 눌러지지 않아요. 누를 곳은 꼭 위젯이나 메뉴로 따로 만들기.</div></div><div class="box bt-card"><div class="bt-frame" aria-label="사진 바둑판형 구조 그림"><div class="row" style="flex:0 0 20%;align-items:center"><div class="col" style="width:38%;gap:5px"><div class="ln b"></div><div class="ln s"></div></div><div class="ph" style="flex:1;height:100%"></div><div class="ph" style="flex:1;height:100%"></div><div class="ph" style="flex:1;height:100%"></div></div><div class="menu"><i></i><i></i><i></i><i></i></div>
+<div style="flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:4px"><div class="col"><div class="ph" style="flex:1"></div><div class="ln" style="background:var(--brand);opacity:.7"></div></div><div class="col"><div class="ph" style="flex:1"></div><div class="ln" style="background:var(--brand);opacity:.7"></div></div><div class="col"><div class="ph" style="flex:1"></div><div class="ln" style="background:var(--brand);opacity:.7"></div></div><div class="col"><div class="ph" style="flex:1"></div><div class="ln" style="background:var(--brand);opacity:.7"></div></div><div class="col"><div class="ph" style="flex:1"></div><div class="ln" style="background:var(--brand);opacity:.7"></div></div><div class="col"><div class="ph" style="flex:1"></div><div class="ln" style="background:var(--brand);opacity:.7"></div></div><div class="col"><div class="ph" style="flex:1"></div><div class="ln" style="background:var(--brand);opacity:.7"></div></div><div class="col"><div class="ph" style="flex:1"></div><div class="ln" style="background:var(--brand);opacity:.7"></div></div><div class="col"><div class="ph" style="flex:1"></div><div class="ln" style="background:var(--brand);opacity:.7"></div></div><div class="col"><div class="ph" style="flex:1"></div><div class="ln" style="background:var(--brand);opacity:.7"></div></div></div></div>
+<div class="row"><span class="t-heading2 c-strong">5. 사진 바둑판형</span><span class="badge badge-s badge-brand">상위 20곳 중 4곳</span></div>
+<div class="t-label1 c-2">대문은 작게, 그 아래 최신 글 사진이 4~5칸씩 줄줄이.</div>
+<div class="bt-k">잘 맞는 고객</div><div class="t-label1">제품 리뷰, 맛집, 음식점 메뉴, 반려동물·육아 일상처럼 글마다 사진이 있는 곳</div>
+<div class="bt-k">들어가는 것</div><ul><li>작은 대문(이름 + 사진 콜라주)</li><li>메뉴 한 줄</li><li>프롤로그: 이미지 강조형 4~5칸 × 여러 줄</li></ul>
+<div class="bt-k">네이버에서 만드는 법</div><div class="t-label2 c-2">프롤로그 설정 > 이미지 강조형, 메인에 보일 카테고리 고르기</div>
+<div class="bt-tip">대표 사진에 제목 글자를 크게 넣은 블로그가 눈에 잘 띄었어요. 사진 없는 글은 바둑판에 안 나와요.</div></div><div class="box bt-card"><div class="bt-frame" aria-label="위젯 대시보드형 구조 그림"><div class="gnb"></div><div class="menu"><i></i><i></i><i></i></div><div class="row" style="flex:0 0 46%">
+<div class="wd" style="flex:1"><div class="ph" style="flex:1"></div><div class="ln s"></div></div>
+<div class="wd" style="flex:1"><div class="ln s"></div><div class="ln s"></div><div class="ln s"></div><div class="ln s"></div><div class="ln s"></div><div class="ln s"></div></div>
+<div class="wd" style="flex:1"><div class="ln b" style="background:var(--positive);width:70%;height:8px"></div><div class="ln "></div><div class="ln "></div><div class="row" style="gap:3px"><div class="ph" style="flex:1;height:10px"></div><div class="ph" style="flex:1;height:10px"></div><div class="ph" style="flex:1;height:10px"></div></div></div>
+<div class="wd" style="flex:1;background:rgba(0,189,222,.35)"></div>
+<div class="wd" style="flex:1"><svg viewBox="0 0 40 20" style="width:100%"><polyline points="2,14 10,8 18,9 26,6 34,15" fill="none" stroke="var(--cyan-60)" stroke-width="1.5"/></svg></div></div>
+<div class="col" style="flex:1;gap:7px;padding-top:4px"><div class="ln b" style="width:30%"></div><div class="ln "></div><div class="ln "></div><div class="ln "></div><div class="ln "></div></div></div>
+<div class="row"><span class="t-heading2 c-strong">6. 위젯 대시보드형</span><span class="badge badge-s badge-brand">상위 20곳 중 3곳</span></div>
+<div class="t-label1 c-2">대문 그림 없이 프로필·카테고리·이웃 수·배지·방문자 그래프를 위에 한 줄.</div>
+<div class="bt-k">잘 맞는 고객</div><div class="t-label1">글이 수천 편인 정보형 블로그, 숫자·배지가 곧 신뢰인 곳</div>
+<div class="bt-k">들어가는 것</div><ul><li>위젯 한 줄: 프로필 / 카테고리 / 이웃 / 배지 / 방문 그래프</li><li>바로 아래 글 목록</li><li>(변형) 3단: 양옆에 배너 위젯</li></ul>
+<div class="bt-k">네이버에서 만드는 법</div><div class="t-label2 c-2">레이아웃·위젯 설정에서 1단(위젯 위 줄) 또는 3단 선택</div>
+<div class="bt-tip">새로 시작하는 고객에겐 비추천. 숫자가 작으면 오히려 약해 보여요.</div></div></div>
+<div class="shead shead-m" style="margin:40px 0 0"><h2>고객과 고를 때 이렇게 물어보세요</h2></div>
+<div class="bt-pick">
+<div class="box"><span class="t-label2 c-3">사진이 예쁘게 나오나요?</span><span class="t-headline2 c-strong">1 큰 사진 · 5 바둑판</span></div>
+<div class="box"><span class="t-label2 c-3">예약·문의 전화가 제일 중요해요?</span><span class="t-headline2 c-strong">2 아이콘 버튼</span></div>
+<div class="box"><span class="t-label2 c-3">사람(전문가)이 곧 브랜드예요?</span><span class="t-headline2 c-strong">3 소개서 · 1 큰 사진</span></div>
+<div class="box"><span class="t-label2 c-3">캐릭터·손글씨 로고가 있어요?</span><span class="t-headline2 c-strong">4 메뉴판 + 그림</span></div>
+<div class="box"><span class="t-label2 c-3">글이 이미 수백 편 넘어요?</span><span class="t-headline2 c-strong">6 대시보드 · 5 바둑판</span></div>
+</div>
+<div class="smsg" style="margin-top:20px"><div><b>조사 기준</b> · 블라이 랭킹 종합 순위(2026-11-11 갱신, 네이버 통합검색 노출 기준) 1~20위 블로그를 2026-11-16 PC 화면으로 열어 첫 화면만 셌어요. 블로그 이름과 사진은 싣지 않고 구조만 그렸어요. 한 블로그가 두 구조에 걸치면 더 가까운 쪽 하나로 셌어요.</div></div>
+</section>
 </main></body></html>
